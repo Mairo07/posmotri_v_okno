@@ -16,6 +16,9 @@ html {
   background-color: #1b1919;
   inline-size: 1200px;
   block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -41,7 +44,6 @@ ol {
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 30px;
-  margin: auto;
   padding: 135px 30px;
 }
 
