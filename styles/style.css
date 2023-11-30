@@ -9,13 +9,13 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -35,4 +35,279 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 30px;
+  margin: auto;
+  padding: 135px 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 16px;
+  block-size: 100%;
+}
+
+.result__video-container {
+  position: relative;
+  max-inline-size: 711px;
+  max-block-size: 386px;
+}
+
+.result__video {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* Располагаем чекбоксы в линию */
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+/* Выравнимаеч чекбокс и его лейбл по высоте */
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  inline-size: fit-content;
+}
+
+/* Подчёркивание текста у чекбокса при наведении на лейбл  */
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+/* Фокус текстового поля и чекбоксов */
+
+.search-form__label:has(:focus) {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield {
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-inline-size: 225px;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 1px;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  box-sizing: content-box;
+  background-color: #fff;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.button {
+  border: 1px solid #fff;
+  padding: 6px 0;
+  color: currentColor;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Состояния кнопок */
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+/* Расположение кнопок в секциях */
+
+.search-form__submit-button {
+  align-self: end;
+  inline-size: 194px;
+}
+
+.more-button {
+  margin: 0 2px 2px;
+  inline-size: 99%;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 22px;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  overflow-y: auto;
+  block-size: 298px;
+  min-inline-size: 399px;
+}
+
+/* Добавляем отступ элементам списка. 
+Когда кнопка уйдет из списка, у последнего элемента не будет отступа */
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__card-link {
+  display: block;
+  margin: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Состояния элементов списка городов */
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.content__video-card-title {
+  margin-block-end: 6px;
+  overflow: hidden;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 90%;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 2px;
+}
+
+.content__video-card-thumbnail {
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 194px;
+  block-size: 103px;
+}
+
+/* Класс для невидимых элементов */
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
